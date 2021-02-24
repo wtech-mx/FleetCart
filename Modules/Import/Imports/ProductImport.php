@@ -44,6 +44,7 @@ class ProductImport implements OnEachRow, WithChunkReading, WithHeadingRow
             'tax_class_id' => $data['tax_class'],
             'tags' => $this->explode($data['tags']),
             'price' => $data['price'],
+            'price2' => $data['price2'],
             'special_price' => $data['special_price'],
             'special_price_type' => $data['special_price_type'],
             'special_price_start' => $data['special_price_start'],
@@ -182,6 +183,7 @@ class ProductImport implements OnEachRow, WithChunkReading, WithHeadingRow
             $values[] = [
                 'label' => $value['label'],
                 'price' => $value['price'],
+                'price2' => $value['price2'],
                 'price_type' => $value['price_type'],
             ];
         }

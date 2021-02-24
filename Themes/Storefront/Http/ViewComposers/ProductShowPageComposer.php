@@ -58,7 +58,7 @@ class ProductShowPageComposer
     private function offersSchema(Product $product)
     {
         return Schema::offer()
-            ->price($product->selling_price->convertToCurrentCurrency()->amount())
+            ->price($product->price2)
             ->priceCurrency(currency())
             ->availability($product->isInStock() ? ItemAvailability::InStock : ItemAvailability::OutOfStock)
             ->url($product->url());

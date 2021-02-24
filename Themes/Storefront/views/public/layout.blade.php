@@ -77,6 +77,30 @@
         @stack('globals')
 
         @routes
+
+
+        <script type="text/javascript" style="">
+            (function () {
+                var options = {
+                    facebook: "462782217214812", // Facebook page ID
+                    whatsapp: '{{ setting('store_phone') }}', // WhatsApp number
+                    email: '{{ setting('store_email') }}', // Email
+                    sms: '{{ setting('store_phone') }}', // Sms phone number
+                    call: '{{ setting('store_phone') }}', // Call phone number
+                    company_logo_url: "", // URL of company logo (png, jpg, gif)
+                    greeting_message: "", // Text of greeting message
+                    call_to_action: "Cotiza ahora", // Call to action
+                    wa_vb_message: "", // Message for WhatsApp
+                    button_color: "#27e72e", // Color of button
+                    position: "left", // Position may be 'right' or 'left'
+                    order: "facebook,whatsapp,email,sms,call" // Order of buttons
+                };
+                var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+                var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+                s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+                var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+            })();
+        </script>
     </head>
 
     <body

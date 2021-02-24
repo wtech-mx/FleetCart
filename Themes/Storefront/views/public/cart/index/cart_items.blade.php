@@ -45,7 +45,7 @@
                 <td>
                     <label>{{ trans('storefront::cart.table.unit_price:') }}</label>
 
-                    <span class="product-price" v-html="cartItem.unitPrice.inCurrentCurrency.formatted"></span>
+                    <span class="product-price" v-html="cartItem.unitPrice2"></span>
                 </td>
 
                 <td>
@@ -78,7 +78,7 @@
                 <td>
                     <label>{{ trans('storefront::cart.table.line_total:') }}</label>
 
-                    <span class="product-price" v-html="cartItem.total.inCurrentCurrency.formatted"></span>
+                    <span class="product-price" v-html="cart.subTotal.inCurrentCurrency.formatted"></span>
                 </td>
 
                 <td>

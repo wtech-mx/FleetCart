@@ -55,7 +55,7 @@
 
                         <div class="product-details-info">
                             <div class="details-info-top">
-                                <h1 class="product-name">{{ $product->name }}</h1>
+                                <h1 class="product-name">{{ $product->id }} - {{ $product->name }}</h1>
 
                                 @if (setting('reviews_enabled'))
                                     <product-rating :rating-percent="ratingPercent" :review-count="totalReviews"></product-rating>
@@ -103,8 +103,8 @@
                             </div>
 
                             <div class="details-info-middle">
-                                <div class="product-price" v-html="price">
-                                    {!! $product->formatted_price !!}
+                                <div class="product-price">
+                                     ${{ $product->price2 }}
                                 </div>
 
                                 <form

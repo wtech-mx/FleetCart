@@ -3,7 +3,7 @@
         @slot('thead')
             <tr>
                 @include('admin::partials.table.select_all')
-
+                <th style="width: 5px">Selecciona</th>
                 <th data-sort>{{ trans('admin::admin.table.id') }}</th>
                 <th>{{ trans('media::media.table.thumbnail') }}</th>
                 <th>{{ trans('media::media.table.filename') }}</th>

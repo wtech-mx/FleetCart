@@ -5,6 +5,7 @@ namespace Modules\Shipping\Providers;
 use Modules\Shipping\Method;
 use Illuminate\Support\ServiceProvider;
 use Modules\Shipping\Facades\ShippingMethod;
+use Illuminate\Support\Facades\DB;
 
 class ShippingServiceProvider extends ServiceProvider
 {
@@ -51,6 +52,8 @@ class ShippingServiceProvider extends ServiceProvider
         if (! setting('flat_rate_enabled')) {
             return;
         }
+//        $productos = DB::table('products')->get();
+//        dd($productos);
 
         ShippingMethod::register('flat_rate', function () {
             return new Method('flat_rate', setting('flat_rate_label'), setting('flat_rate_cost'));

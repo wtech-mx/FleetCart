@@ -22,7 +22,7 @@
             </div>
 
             <div class="product-card-right">
-                <a :href="productUrl" class="product-name">
+                <a  class="product-name">
                     <h6>{{ product.name }}</h6>
                 </a>
 

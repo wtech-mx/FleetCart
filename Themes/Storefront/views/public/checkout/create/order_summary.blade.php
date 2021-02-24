@@ -10,7 +10,13 @@
                         <span class="product-quantity" v-text="'x' + cartItem.qty"></span>
                     </label>
 
-                    <span class="price-amount" v-html="cartItem.unitPrice.inCurrentCurrency.formatted"></span>
+                    <span class="price-amount" v-html="cartItem.unitPrice2"></span>
+                    <span class="product-pesoV" v-html="cartItem.product.pesoV"></span>
+                    <span
+                        class="product-pesoV"
+                        v-html="cart.pesoV"
+                    >
+                    </span>
                 </li>
             </ul>
         </div>
@@ -119,6 +125,7 @@
                 v-cloak
             >
                 {{ trans('storefront::checkout.place_order') }}
+
             </button>
         </div>
     </div>

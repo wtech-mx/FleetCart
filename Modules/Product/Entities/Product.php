@@ -48,6 +48,10 @@ class Product extends Model
         'slug',
         'sku',
         'price',
+        'price2',
+        'pesoV',
+        'KG',
+        'costo',
         'special_price',
         'special_price_type',
         'special_price_start',
@@ -124,7 +128,7 @@ class Product extends Model
             }
 
             $product->withoutEvents(function () use ($product) {
-                $product->update(['selling_price' => $product->getSellingPrice()->amount()]);
+                $product->update(['price2' => $product->getSellingPrice()]);
             });
         });
 
@@ -177,6 +181,7 @@ class Product extends Model
     {
         $query->addSelect([
             'products.price',
+            'products.price2',
             'products.special_price',
             'products.special_price_type',
             'products.selling_price',
@@ -269,7 +274,7 @@ class Product extends Model
     public function getSellingPriceAttribute($sellingPrice)
     {
         if (FlashSale::contains($this)) {
-            $sellingPrice = FlashSale::pivot($this)->price->amount();
+            $sellingPrice = FlashSale::pivot($this)->price2;
         }
 
         return Money::inDefaultCurrency($sellingPrice);
@@ -388,7 +393,7 @@ class Product extends Model
             return $this->getSpecialPrice();
         }
 
-        return $this->price;
+        return $this->price2;
     }
 
     public function getSpecialPrice()

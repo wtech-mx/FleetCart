@@ -15,7 +15,7 @@ class RecentlyViewed extends DarryldecodeCart
         return $this->add([
             'id' => $product->id,
             'name' => $product->name,
-            'price' => $product->selling_price->amount(),
+            'price' => $product->price2,
             'quantity' => 1,
             'attributes' => compact('product'),
         ]);

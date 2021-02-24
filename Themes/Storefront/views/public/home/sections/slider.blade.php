@@ -33,6 +33,7 @@
                                         >
                                             {!! $slide->caption_2 !!}
                                         </span>
+                                        <a href="{{ $slide->file->path }}">holaaaaa</a>
 
                                         @if ($slide->call_to_action_text)
                                             <a

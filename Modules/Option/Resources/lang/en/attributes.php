@@ -17,5 +17,6 @@ return [
     'options.*.type' => 'Type',
     'options.*.values.*.label' => 'Label',
     'options.*.values.*.price' => 'Price',
+    'options.*.values.*.price2' => 'Price2',
     'options.*.values.*.price_type' => 'Price Type',
 ];

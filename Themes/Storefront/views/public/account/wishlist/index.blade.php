@@ -24,7 +24,6 @@
                     <table class="table table-borderless my-wishlist-table">
                         <thead>
                             <tr>
-                                <th>{{ trans('storefront::account.image') }}</th>
                                 <th>{{ trans('storefront::account.product_name') }}</th>
                                 <th>{{ trans('storefront::account.wishlist.price') }}</th>
                                 <th>{{ trans('storefront::account.wishlist.availability') }}</th>
@@ -34,11 +33,6 @@
 
                         <tbody>
                             <tr v-for="product in products.data" :key="product.id">
-                                <td>
-                                    <div class="product-image">
-                                        <img :src="baseImage(product)" :class="{ 'image-placeholder': ! hasBaseImage(product) }" alt="product-image">
-                                    </div>
-                                </td>
 
                                 <td>
                                     <a :href="productUrl(product)" class="product-name">
@@ -47,7 +41,7 @@
                                 </td>
 
                                 <td>
-                                    <span class="product-price" v-html="product.formatted_price"></span>
+                                    <span class="product-price" v-html="product.price2"></span>
                                 </td>
 
                                 <td>

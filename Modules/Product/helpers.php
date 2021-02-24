@@ -13,17 +13,17 @@ if (! function_exists('product_price_formatted')) {
     function product_price_formatted($product, $callback = null)
     {
         if (FlashSale::contains($product)) {
-            $previousPrice = $product->getSellingPrice()->convertToCurrentCurrency()->format();
+            $previousPrice = $product->price2;
             $flashSalePrice = FlashSale::pivot($product)->price->convertToCurrentCurrency()->format();
 
             if (is_callable($callback)) {
                 return $callback($flashSalePrice, $previousPrice);
             }
 
-            return "{$flashSalePrice} <span class='previous-price'>{$previousPrice}</span>";
+            return "$ {$previousPrice}";
         }
 
-        $price = $product->price->convertToCurrentCurrency()->format();
+        $price = $product->price2;
         $specialPrice = $product->getSpecialPrice()->convertToCurrentCurrency()->format();
 
         if (is_callable($callback)) {
@@ -31,9 +31,9 @@ if (! function_exists('product_price_formatted')) {
         }
 
         if (! $product->hasSpecialPrice()) {
-            return $price;
+            return "$ {$price}";
         }
 
-        return "{$specialPrice} <span class='previous-price'>{$price}</span>";
+        return "$ {$price}";
     }
 }

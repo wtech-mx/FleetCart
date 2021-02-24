@@ -44,7 +44,7 @@
                                     <td>{{ trans('storefront::compare.price') }}</td>
 
                                     <td v-for="product in products">
-                                        <span class="product-price" v-html="product.formatted_price"></span>
+                                        <span class="product-price" v-html="product.price2"></span>
                                     </td>
                                 </tr>
 

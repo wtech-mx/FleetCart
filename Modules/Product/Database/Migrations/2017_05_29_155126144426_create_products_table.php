@@ -30,6 +30,8 @@ class CreateProductsTable extends Migration
             $table->boolean('is_active');
             $table->datetime('new_from')->nullable();
             $table->datetime('new_to')->nullable();
+            $table->string('pesoV', 999)->nullable();
+            $table->string('KG', 999)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -43,7 +43,7 @@
 
 @push('pre-scripts')
     @if (setting('paypal_enabled'))
-        <script src="https://www.paypal.com/sdk/js?client-id={{ setting('paypal_client_id') }}&currency={{ setting('default_currency') }}&disable-funding=credit,card,venmo,sepa,bancontact,eps,giropay,ideal,mybank,p24,p24"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id={{ setting('paypal_client_id') }}&currency={{ setting('default_currency') }}"></script>
     @endif
 
     @if (setting('stripe_enabled'))

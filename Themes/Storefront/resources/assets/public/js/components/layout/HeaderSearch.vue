@@ -144,7 +144,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="product-price" v-html="product.formatted_price"></div>
+
                                 </div>
                             </a>
                         </li>

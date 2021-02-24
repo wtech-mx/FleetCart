@@ -40,6 +40,7 @@ class SettingTabs extends Tabs
 
         $this->group('payment_methods', trans('setting::settings.tabs.group.payment_methods'))
             ->add($this->paypal())
+            ->add($this->mercadopago())
             ->add($this->stripe())
             ->add($this->razorpay())
             ->add($this->instamojo())
@@ -226,6 +227,12 @@ class SettingTabs extends Tabs
                 'flat_rate_enabled',
                 'translatable.flat_rate_label',
                 'flat_rate_cost',
+                'flat_rate_cost2',
+                'flat_rate_cost3',
+                'flat_rate_cost4',
+                'flat_rate_cost5',
+                'flat_rate_cost6',
+                'flat_rate_cost7',
             ]);
 
             $tab->view('setting::admin.settings.tabs.flat_rate');
@@ -250,6 +257,22 @@ class SettingTabs extends Tabs
         });
     }
 
+    private function mercadopago()
+    {
+        return tap(new Tab('mercadopago', 'Mercado Pago'), function (Tab $tab) {
+            $tab->weight(55);
+
+            $tab->fields([
+                'mercadopago_enabled',
+                'mercadopago_label',
+                'mercadopago_description',
+                'mercadopago_test_mode',
+                'mercadopago_public_key',
+                'mercadopago_access',
+            ]);
+            $tab->view('setting::admin.settings.tabs.mercadopago');
+        });
+    }
     private function stripe()
     {
         return tap(new Tab('stripe', trans('setting::settings.tabs.stripe')), function (Tab $tab) {

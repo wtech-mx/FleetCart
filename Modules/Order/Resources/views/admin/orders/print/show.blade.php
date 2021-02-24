@@ -83,11 +83,11 @@
                                 <div class="invoice-address">
                                     <h5>{{ trans('order::print.shipping_address') }}</h5>
 
-                                    <span>{{ $order->shipping_full_name }}</span>
-                                    <span>{{ $order->shipping_address_1 }}</span>
-                                    <span>{{ $order->shipping_address_2 }}</span>
-                                    <span>{{ $order->shipping_city }}, {{ $order->shipping_state_name }} {{ $order->shipping_zip }}</span>
-                                    <span>{{ $order->shipping_country_name }}</span>
+                                    <span>{{ $order->billing_full_name }}</span>
+                                    <span>{{ $order->billing_address_1 }}</span>
+                                    <span>{{ $order->billing_address_2 }}</span>
+                                     <span>{{ $order->billing_city }}, {{ $order->billing_state_name }} {{ $order->billing_zip }}</span>
+                                    <span>{{ $order->billing_country_name }}</span>
                                 </div>
                             </div>
 
@@ -95,11 +95,11 @@
                                 <div class="invoice-address">
                                     <h5>{{ trans('order::print.billing_address') }}</h5>
 
-                                    <span>{{ $order->billing_full_name }}</span>
-                                    <span>{{ $order->billing_address_1 }}</span>
-                                    <span>{{ $order->billing_address_2 }}</span>
-                                    <span>{{ $order->billing_city }}, {{ $order->billing_state_name }} {{ $order->billing_zip }}</span>
-                                    <span>{{ $order->billing_country_name }}</span>
+                                    <span><strong>Nombre Fiscal: </strong> {{ $order->billing_full_name }}</span>
+                                    <span><strong>Correo Fiscal: </strong>{{ $order->shipping_last_name }}</span>
+                                    <span><strong>Regimen Fiscal: </strong>{{ $order->shipping_address_1 }}</span>
+                                    <span><strong>CP: </strong>{{ $order->shipping_zip }}</span>
+                                    <span><strong>RFC: </strong>{{ $order->shipping_city }}</span>
                                 </div>
                             </div>
                         </div>

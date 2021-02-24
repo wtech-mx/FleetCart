@@ -33,6 +33,12 @@ class SettingDatabaseSeeder extends Seeder
             'search_engine' => 'mysql',
             'local_pickup_cost' => 0,
             'flat_rate_cost' => 0,
+            'flat_rate_cost2' => 0,
+            'flat_rate_cost3' => 0,
+            'flat_rate_cost4' => 0,
+            'flat_rate_cost5' => 0,
+            'flat_rate_cost6' => 0,
+            'flat_rate_cost7' => 0,
             'translatable' => [
                 'store_name' => 'FleetCart',
                 'free_shipping_label' => 'Free Shipping',

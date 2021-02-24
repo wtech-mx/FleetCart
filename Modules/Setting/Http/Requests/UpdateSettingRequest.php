@@ -71,6 +71,12 @@ class UpdateSettingRequest extends Request
             'flat_rate_enabled' => 'required|boolean',
             'translatable.flat_rate_label' => 'required_if:flat_rate_enabled,1',
             'flat_rate_cost' => ['required_if:flat_rate_enabled,1', 'nullable', 'numeric'],
+            'flat_rate_cost2' => ['required_if:flat_rate_enabled,1', 'nullable', 'numeric'],
+            'flat_rate_cost3' => ['required_if:flat_rate_enabled,1', 'nullable', 'numeric'],
+            'flat_rate_cost4' => ['required_if:flat_rate_enabled,1', 'nullable', 'numeric'],
+            'flat_rate_cost5' => ['required_if:flat_rate_enabled,1', 'nullable', 'numeric'],
+            'flat_rate_cost6' => ['required_if:flat_rate_enabled,1', 'nullable', 'numeric'],
+            'flat_rate_cost7' => ['required_if:flat_rate_enabled,1', 'nullable', 'numeric'],
 
             'paypal_enabled' => 'required|boolean',
             'translatable.paypal_label' => 'required_if:paypal_enabled,1',
